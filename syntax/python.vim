@@ -156,7 +156,7 @@ syn keyword pythonStatement     pass raise
 syn keyword pythonStatement     global assert
 syn keyword pythonStatement     lambda
 syn keyword pythonStatement     with
-syn keyword pythonStatement     def class nextgroup=pythonFunction skipwhite
+syn keyword pythonDefinition    def class nextgroup=pythonFunction skipwhite
 syn keyword pythonRepeat        for while
 syn keyword pythonConditional   if elif else
 " The standard pyrex.vim unconditionally removes the pythonInclude group, so
@@ -497,6 +497,7 @@ if version >= 508 || !exists("did_python_syn_inits")
   endif
 
   HiLink pythonStatement        Statement
+  HiLink pythonDefinition       Statement
   HiLink pythonImport           Include
   HiLink pythonFunction         Function
   HiLink pythonConditional      Conditional
@@ -562,6 +563,8 @@ if version >= 508 || !exists("did_python_syn_inits")
   HiLink pythonBuiltinFunc      Function
 
   HiLink pythonExClass          Structure
+
+  HiLink pythonSelf             Identifier
 
   delcommand HiLink
 endif
