@@ -187,6 +187,9 @@ else
   syn match   pythonStatement   "\<async\s\+for\>" display
 endif
 
+syn match   pythonParen    "("
+syn match   pythonFunction "\w\+\s*(\@=" contains=pythonParen
+
 "
 " Decorators (new in Python 2.4)
 "
